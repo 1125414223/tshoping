@@ -16,21 +16,25 @@
 					欢迎您：<em>张 山</em>
 				</div>
 				<div class="login_btn fl">
-					<a href="login.html">登录</a>
+                    {% if user == None %}
+                            <a href="/login_from">登录</a>
+
+                    {% else %}
+                        <a href="/login_from">欢迎:{{ user.user_name }}</a>
+                    {% endif %}
 					<span>|</span>
-					<a href="register.html">注册</a>
+					<a href="/register_from">注册</a>
 				</div>
 				<div class="user_link fl">
+						<span>|</span>
+					<a href="/user_center_info">用户中心</a>
 					<span>|</span>
-					<a href="user_center_info.html">用户中心</a>
+					<a href="/cart">我的购物车</a>
 					<span>|</span>
-					<a href="cart.html">我的购物车</a>
-					<span>|</span>
-					<a href="user_center_order.html">我的订单</a>
+					<a href="/user_center_order">我的订单</a>
 				</div>
-
 			</div>
-		</div>		
+		</div>
 	</div>
 
 	<div class="search_bar clearfix">
